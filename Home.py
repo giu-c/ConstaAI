@@ -223,7 +223,7 @@ with col1:
     st.markdown("""
     <div class="feature-card">
         <h3>🫂 User Friendly</h3>
-        <p>Semplicità e piacevolezza di utilizzo.</p>
+        <p>Pensato per tutti. Semplice e piacevole da utilizzare.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -265,7 +265,7 @@ with col6:
     st.markdown("""
     <div class="feature-card">
         <h3>💯 Massima Precisione</h3>
-        <p>Impossibile ottenere query inesatte.</p>
+        <p>Impossibile ottenere query inesatte. Mettilo alla prova!</p>
     </div>
     """, unsafe_allow_html=True)
 
