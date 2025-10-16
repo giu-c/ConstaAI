@@ -145,7 +145,7 @@ st.markdown("""
     transition: transform 0.2s;
     border: 1px solid rgba(102, 126, 234, 0.2);
     
-    min-height: 180px;  /* Altezza minima fissa */
+    min-height: 150px;  /* Altezza minima fissa */
     height: 100%;       /* Occupa tutta l'altezza disponibile */
     display: flex;
     flex-direction: column;
@@ -222,8 +222,8 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
     <div class="feature-card">
-        <h3>🌍 Multilingua</h3>
-        <p>Interroga il database in italiano o inglese, l'AI comprende il linguaggio naturale e lo traduce in SQL perfetto.</p>
+        <h3>🫂 User Friendly</h3>
+        <p>Semplicità e piacevolezza di utilizzo.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -231,15 +231,15 @@ with col3:
     st.markdown("""
     <div class="feature-card">
         <h3>🛡️ Sicuro per Design</h3>
-        <p>Database isolato in memoria, validazione a 2 livelli e protezione contro query pericolose. I tuoi dati sono al sicuro.</p>
+        <p>Database isolato in memoria. I dati sono al sicuro.</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div class="feature-card">
-        <h3>🪄 Auto-Correzione</h3>
-        <p> Correzione automatica degli errori e ottimizzazione della query in tempo reale\n.</p>
+        <h3>🪄 Magico</h3>
+        <p> Interpretazione delle richieste e ottimizzazione.\n</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -249,7 +249,7 @@ with col4:
     st.markdown("""
     <div class="feature-card">
         <h3>👩🏻‍🏫 Spiegazioni Chiare</h3>
-        <p>Ogni query viene spiegata in linguaggio semplice, così puoi imparare l'SQL mentre lavori.\n</p>
+        <p>Impara e migliora la tua conoscenza di SQL.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -257,7 +257,7 @@ with col5:
     st.markdown("""
     <div class="feature-card">
         <h3>⚡ Prestazioni Incredibili</h3>
-        <p>Risposte rapide anche per query complesse.\n\n</p>
+        <p>Risposte rapide anche per query complesse.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -265,7 +265,7 @@ with col6:
     st.markdown("""
     <div class="feature-card">
         <h3>💯 Massima Precisione</h3>
-        <p>Impossibile ottenere query inesatte.\n\n</p>
+        <p>Impossibile ottenere query inesatte.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -283,14 +283,14 @@ with steps_col1:
     Scrivi in linguaggio naturale ciò che vuoi sapere dal database:
     - *"Questo mese dobbiamo festeggiare l'anniversario dell'assunzione di qualche dipendente?"*
     - *"Sushi o sashimi?"*                
-    - *"Titoli delle canzoni Rock dalla durata superiore ai 5 minuti presenti in almeno due compilation*
+    - *"Titoli delle canzoni Rock dalla durata superiore ai 5 minuti presenti in almeno due compilation"*
     - *"Cancella la tabella dipendenti"*
     - *"Dove vivono i nostri clienti? Indicami i 3 paesi più rappresentativi"*
     - *"Meglio Messi o Ronaldo?"*
     - *"Aggiungi un nuovo cliente di nome Mark Pittau e i relativi valori (usa dati sintetici)"*
     - *"Abbiamo Paolo Conte tra gli artisti?"*
     - *"Analogie tra la sorella del mio collega e Unieuro"*
-    - *"Rimuovi tutte le tabelle*
+    - *"Rimuovi tutte le tabelle"*
     """)
 
 with steps_col2:
@@ -301,7 +301,7 @@ with steps_col2:
     Scarica il risultato in formato csv con un semplice click per iniziare subito le tue analisi.
 
     ### 🤓 Impara e migliora
-    Leggi la spiegazione educativa dell'AI per capire come funziona la query e migliorare le tue competenze SQL.
+    Leggi la spiegazione educativa dell'AI, osserva la relativa formulazione SQL e i risultati per capirne il funzionamento e migliorare le tue competenze SQL.
     """)
 
 # Call to action
@@ -321,7 +321,7 @@ with col_center:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #b8bdc4; padding: 2rem 0;'>
-    <p><strong style='color: #ffffff;'>Consta AI v1.0</strong> - Powered by Giuseppe Curridori</p>
-    <p>Stack: Python 3.12 | Streamlit | Groq API | OpenAI | SQLite | & more</p>
+    <p><strong style='color: #ffffff;'>Consta AI v1.0</strong> - Developed by Giuseppe Curridori</p>
+    <p>Python 3.12 • Streamlit • Groq API • gpt-oss-120b • SQLite</p>
 </div>
 """, unsafe_allow_html=True)
