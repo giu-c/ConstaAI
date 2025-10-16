@@ -408,7 +408,7 @@ class UIComponents:
                     "Database dello store musicale Chinook: artisti musicali, album, canzoni, playlist, "
                     "generi musicali, clienti, fatture, dipendenti, etc. È composto da 11 tabelle e oltre 15000 record!"
                 )
-                st.image(r"objects\db_scheme.png", width=625)
+                st.image("objects/db_scheme.png", width=625)
 
         with col3:
             reset = st.button("🔄 Reset Database", use_container_width=True)
