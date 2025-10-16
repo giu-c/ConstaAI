@@ -322,6 +322,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #b8bdc4; padding: 2rem 0;'>
     <p><strong style='color: #ffffff;'>Consta AI v1.0</strong> - Developed by Giuseppe Curridori</p>
-    <p>Python 3.12 • Streamlit • Groq API • gpt-oss-120b • SQLite</p>
+    <p>Python 3.12 | Streamlit | Groq API | gpt-oss-120b | SQLite</p>
 </div>
 """, unsafe_allow_html=True)
