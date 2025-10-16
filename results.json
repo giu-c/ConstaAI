@@ -1,0 +1,44 @@
+[
+    "La richiesta è pertinente: l'utente vuole i nomi dei dipendenti, quindi si interroga sulla tabella Employee. Ho estratto le colonne FirstName e LastName, che contengono i nomi e cognomi, usando una semplice SELECT senza filtri.",
+    "SELECT FirstName, LastName FROM Employee;",
+    {
+        "columns": [
+            "FirstName",
+            "LastName"
+        ],
+        "data": [
+            [
+                "Andrew",
+                "Adams"
+            ],
+            [
+                "Nancy",
+                "Edwards"
+            ],
+            [
+                "Jane",
+                "Peacock"
+            ],
+            [
+                "Margaret",
+                "Park"
+            ],
+            [
+                "Steve",
+                "Johnson"
+            ],
+            [
+                "Michael",
+                "Mitchell"
+            ],
+            [
+                "Robert",
+                "King"
+            ],
+            [
+                "Laura",
+                "Callahan"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,120 @@
+Il presente schema E-R riguarda l’attività commerciale di uno store digitale di musica: artisti musicali, album, canzoni, playlist, generi musicali, clienti, fatture e dipendenti. È composto da 11 tabelle e varie chiavi primarie (PK) ed esterne (FK).
+________________________________________
+Artist
+•	ArtistId INT (PK)
+•	Name VARCHAR(120)
+Relazioni:
+•	1 → N con Album (un artista può avere più album)
+________________________________________
+Album
+•	AlbumId INT (PK)
+•	Title VARCHAR(160)
+•	ArtistId INT (FK → Artist.ArtistId)**
+Relazioni:
+•	N → 1 con Artist
+•	1 → N con Track
+________________________________________
+Track
+•	TrackId INT (PK)
+•	Name VARCHAR(200)
+•	AlbumId INT (FK → Album.AlbumId)
+•	MediaTypeId INT (FK → MediaType.MediaTypeId)
+•	GenreId INT (FK → Genre.GenreId)
+•	Composer VARCHAR(220)
+•	Milliseconds INT
+•	Bytes INT
+•	UnitPrice DECIMAL(10,2)
+Relazioni:
+•	N → 1 con Album
+•	N → 1 con Genre
+•	N → 1 con MediaType
+•	1 → N con InvoiceLine
+•	N ↔ N con Playlist (tramite PlaylistTrack)
+________________________________________
+Genre
+•	GenreId INT (PK)
+•	Name VARCHAR(120)
+Relazioni:
+•	1 → N con Track
+________________________________________
+MediaType
+•	MediaTypeId INT (PK)
+•	Name VARCHAR(120)
+Relazioni:
+•	1 → N con Track
+________________________________________
+Playlist
+•	PlaylistId INT (PK)
+•	Name VARCHAR(120)
+Relazioni:
+•	N ↔ N con Track (tramite PlaylistTrack)
+________________________________________
+PlaylistTrack
+•	PlaylistId INT (PK, FK → Playlist.PlaylistId)
+•	TrackId INT (PK, FK → Track.TrackId)**
+Relazioni:
+•	Tabella di associazione tra Playlist e Track (N–N)
+________________________________________
+Invoice
+•	InvoiceId INT (PK)
+•	CustomerId INT (FK → Customer.CustomerId)
+•	InvoiceDate DATETIME
+•	BillingAddress VARCHAR(70)
+•	BillingCity VARCHAR(40)
+•	BillingState VARCHAR(40)
+•	BillingCountry VARCHAR(40)
+•	BillingPostalCode VARCHAR(10)
+•	Total DECIMAL(10,2)
+Relazioni:
+•	N → 1 con Customer
+•	1 → N con InvoiceLine
+________________________________________
+InvoiceLine
+•	InvoiceLineId INT (PK)
+•	InvoiceId INT (FK → Invoice.InvoiceId)
+•	TrackId INT (FK → Track.TrackId)
+•	UnitPrice DECIMAL(10,2)
+•	Quantity INT
+Relazioni:
+•	N → 1 con Invoice
+•	N → 1 con Track
+________________________________________
+Customer
+•	CustomerId INT (PK)
+•	FirstName VARCHAR(40)
+•	LastName VARCHAR(20)
+•	Company VARCHAR(80)
+•	Address VARCHAR(70)
+•	City VARCHAR(40)
+•	State VARCHAR(40)
+•	Country VARCHAR(40)
+•	PostalCode VARCHAR(10)
+•	Phone VARCHAR(24)
+•	Fax VARCHAR(24)
+•	Email VARCHAR(60)
+•	SupportRepId INT (FK → Employee.EmployeeId)**
+Relazioni:
+•	N → 1 con Employee (SupportRep)
+•	1 → N con Invoice
+________________________________________
+Employee
+•	EmployeeId INT (PK)
+•	LastName VARCHAR(20)
+•	FirstName VARCHAR(20)
+•	Title VARCHAR(30)
+•	ReportsTo INT (FK → Employee.EmployeeId)**
+•	BirthDate DATETIME
+•	HireDate DATETIME
+•	Address VARCHAR(70)
+•	City VARCHAR(40)
+•	State VARCHAR(40)
+•	Country VARCHAR(40)
+•	PostalCode VARCHAR(10)
+•	Phone VARCHAR(24)
+•	Fax VARCHAR(24)
+•	Email VARCHAR(60)
+Relazioni:
+•	1 → N con Customer (come SupportRep)
+•	1 → N con Employee (autorelazione: manager → subordinati)
+
+________________________________________
