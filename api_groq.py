@@ -28,7 +28,7 @@ def api_call(query):
     client = Groq(api_key=api_key)
 
     # Recupero schema db
-    with open("db_scheme.txt", "r", encoding="utf-8") as f:
+    with open("data/db_scheme.txt", "r", encoding="utf-8") as f:
         scheme = f.read()
 
     # Crea il client Groq
@@ -38,7 +38,7 @@ def api_call(query):
     prompt = """Interpreta la richiesta dell'utente: """ + query + """\nAnalizza lo schema e la struttura del database SQLite: """ + scheme + """"\nValuta la probabilità che la richiesta dell'utente sia inerente rispetto allo schema del database. Se non la ritieni inerente, passa allo STEP FINALE. Qualora invece la ritenessi inerente, che informazioni vorrebbe poter ottenere l'utente o che operazioni vorrebbe eseguire sul database? In questo caso, contempla vaghezza e pressapochismo dell'utente. Se ti risulta comunque una richiesta strana, passa allo STEP FINALE. Altrimenti ragiona, formula la query in linguagio SQLite che sia probabilmente quella più adatta relativamente al contestuale schema del database e alla richiesta dell'utente. STEP FINALE: rispondi SOLO con JSON in questo formato:
     {
       "query": "query formulata in linguaggio SQLite" oppure "⚠️ Warning: richiesta ambigua o non inerente!",
-      "disamina": "breve descrizione del tuo processo decisionale e breve delucidazione sulla strutturazione della query e dei relativi comandi SQLite utilizzati"
+      "disamina": "breve descrizione del tuo processo decisionale e breve delucidazione sulla strutturazione della query con spiegazione didattica dei relativi comandi SQL utilizzati"
     }"""
 
 

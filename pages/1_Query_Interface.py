@@ -1,4 +1,4 @@
-from api_groq_text import api_call
+from api_groq import api_call
 import streamlit as st
 import json
 import sqlite3
@@ -9,6 +9,7 @@ import time
 import os
 import pandas as pd
 import io
+
 
 # ==================== CONFIGURAZIONE ====================
 st.set_page_config(
@@ -22,8 +23,8 @@ st.set_page_config(
 # ==================== COSTANTI ====================
 class Config:
     VIDEO_DURATION = 13
-    DB_PATH = 'db.sqlite'
-    VIDEO_PATH = 'Query.mp4'
+    DB_PATH = 'data/db.sqlite'
+    VIDEO_PATH = r'objects\Query.mp4'
     OUTPUT_JSON = 'output.json'
     RESULTS_JSON = 'results.json'
     SQL_MODIFICATION_COMMANDS = frozenset(["DROP", "REPLACE", "UPDATE", "INSERT", "DELETE"])
@@ -285,10 +286,10 @@ class UIComponents:
         """Renderizza risultati stringa con stili appropriati"""
         if Config.EMOJI_ERROR in query_result:
             st.error(query_result)
-            UIComponents.show_centered_image("hasbu.avif")
+            UIComponents.show_centered_image(r"objects\hasbu.avif")
         elif "Warning" in sql_query or Config.EMOJI_WARNING in query_result:
             st.warning(query_result)
-            UIComponents.show_centered_image("meme.jpg")
+            UIComponents.show_centered_image(r"objects\meme.jpg")
         elif Config.EMOJI_SUCCESS in query_result or Config.EMOJI_EMPTY in query_result:
             st.success(query_result)
         else:
@@ -335,7 +336,7 @@ class UIComponents:
 
         # Video per operazioni pericolose
         if Config.EMOJI_ERROR not in str(query_result) and any(cmd in sql_query for cmd in ["DELETE", "DROP"]):
-            st.video("non_farlo.mp4")
+            st.video(r"objects\non_farlo.mp4")
 
     @staticmethod
     def show_video_intro():
@@ -407,7 +408,7 @@ class UIComponents:
                     "Database dello store musicale Chinook: artisti musicali, album, canzoni, playlist, "
                     "generi musicali, clienti, fatture, dipendenti, etc. È composto da 11 tabelle e oltre 15000 record!"
                 )
-                st.image("db_scheme.png", width=625)
+                st.image(r"objects\db_scheme.png", width=625)
 
         with col3:
             reset = st.button("🔄 Reset Database", use_container_width=True)

@@ -203,13 +203,13 @@ st.markdown("""
 st.title("🫡 Consta, la tua assistente AI")
 
 # Sezione video di presentazione con controllo esistenza file
-video_path = Path("Consta.mp4")
+video_path = Path("objects/Consta.mp4")
 
 if video_path.exists():
     st.video(str(video_path))
 else:
     st.warning(
-        "⚠️ Video di presentazione non disponibile. Verifica che 'onsta.mp4' sia presente nella directory del progetto.")
+        "⚠️ Video di presentazione non disponibile. Verifica che 'Consta.mp4' sia presente nella directory del progetto.")
 
 # Divider
 st.markdown("---")
@@ -223,7 +223,7 @@ with col1:
     st.markdown("""
     <div class="feature-card">
         <h3>🫂 User Friendly</h3>
-        <p>Pensato per tutti. Semplice e piacevole da utilizzare.</p>
+        <p>Pensata per tutti. Semplice e piacevole.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -239,7 +239,7 @@ with col2:
     st.markdown("""
     <div class="feature-card">
         <h3>🪄 Magico</h3>
-        <p> Interpretazione delle richieste e ottimizzazione.\n</p>
+        <p> Interpretazione profonda delle richieste.\n</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -265,7 +265,7 @@ with col6:
     st.markdown("""
     <div class="feature-card">
         <h3>💯 Massima Precisione</h3>
-        <p>Impossibile ottenere query inesatte. Mettilo alla prova!</p>
+        <p>Impossibile ottenere query inesatte.</p>
     </div>
     """, unsafe_allow_html=True)
 
