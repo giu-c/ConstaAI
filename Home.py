@@ -301,7 +301,7 @@ with steps_col2:
     Scarica il risultato in formato csv con un semplice click per iniziare subito le tue analisi.
 
     ### 🤓 Impara e migliora
-    Leggi la spiegazione educativa dell'AI, osserva la relativa formulazione SQL e i risultati per capirne il funzionamento e migliorare le tue competenze SQL.
+    Leggi la spiegazione educativa dell'AI, osserva la formulazione SQL e i relativi risultati per capire la logica e migliorare le tue competenze SQL.
     """)
 
 # Call to action
