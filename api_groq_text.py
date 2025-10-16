@@ -4,12 +4,28 @@ def api_call(query):
     from dotenv import load_dotenv
     from groq import Groq
     import json
+    import streamlit as st
 
-    # Carica le variabili dal file .env
+    # Carica .env solo in locale
     load_dotenv()
 
-    # Recupera la chiave dalla variabile d'ambiente
-    api_key = os.getenv("GROQ_API_KEY")
+    def get_api_key():
+        """Ottiene la API key da Streamlit Secrets o .env"""
+        try:
+            # Priorità a Streamlit Cloud secrets
+            return st.secrets["GROQ_API_KEY"]
+        except (KeyError, FileNotFoundError):
+            # Fallback su variabile d'ambiente locale
+            key = os.getenv("GROQ_API_KEY")
+            if not key:
+                st.error("⚠️ GROQ_API_KEY non configurata!")
+                st.info("📝 In locale: crea un file .env\n☁️ Su Streamlit Cloud: aggiungi nei Secrets")
+                st.stop()
+            return key
+
+    # Usa la funzione
+    api_key = get_api_key()
+    client = Groq(api_key=api_key)
 
     # Recupero schema db
     with open("db_scheme.txt", "r", encoding="utf-8") as f:
