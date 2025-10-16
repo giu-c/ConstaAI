@@ -136,20 +136,22 @@ st.markdown("""
         margin-bottom: 2rem;
     }
 
-.feature-card {
-    background: linear-gradient(135deg, #2a3544 0%, #1e2936 100%);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: transform 0.2s;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-    
-    min-height: 150px;  /* Altezza minima fissa */
-    height: 100%;       /* Occupa tutta l'altezza disponibile */
-    display: flex;
-    flex-direction: column;
-}
+    /* Feature Cards - ALTEZZA FISSA CON TESTO GRANDE */
+    .feature-card {
+        background: linear-gradient(135deg, #2a3544 0%, #1e2936 100%);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+        border: 1px solid rgba(102, 126, 234, 0.2);
+
+        /* ALTEZZA FISSA per uniformità */
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 
     .feature-card:hover {
         transform: translateY(-2px);
@@ -159,11 +161,84 @@ st.markdown("""
 
     .feature-card h3 {
         margin-top: 0;
+        margin-bottom: 1rem;
         color: #ffffff;
+        font-size: 1.7rem !important;
+        font-weight: 600;
     }
 
     .feature-card p {
         color: #b8bdc4;
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1.3rem !important;
+    }
+
+    /* Responsive per tablet */
+    @media (max-width: 1024px) {
+        .feature-card {
+            height: 220px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem !important;
+        }
+
+        .feature-card p {
+            font-size: 1.05rem !important;
+        }
+    }
+
+    /* Responsive per mobile - card si impilano */
+    @media (max-width: 768px) {
+        [data-testid="column"] {
+            width: 100% !important;
+            flex: 1 1 100% !important;
+            min-width: 100% !important;
+        }
+
+        .feature-card {
+            height: auto;
+            min-height: 180px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem !important;
+        }
+
+        .feature-card p {
+            font-size: 1rem !important;
+        }
+    }
+
+    /* Stili per sezione Come Iniziare - Testi più grandi */
+    .steps-content h3 {
+        font-size: 1.8rem !important;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .steps-content p {
+        font-size: 1.2rem !important;
+        line-height: 1.8;
+        color: #e8eaed;
+        margin-bottom: 1rem;
+    }
+
+    .steps-content ul {
+        font-size: 1.15rem !important;
+        line-height: 1.8;
+    }
+
+    .steps-content li {
+        margin-bottom: 0.75rem;
+        color: #e8eaed;
+    }
+
+    .steps-content em {
+        color: #b8bdc4;
+        font-style: italic;
     }
 
     .section-title {
@@ -227,19 +302,19 @@ with col1:
     </div>
     """, unsafe_allow_html=True)
 
+with col2:
+    st.markdown("""
+    <div class="feature-card">
+        <h3>🪄 Magico</h3>
+        <p>Interpretazione profonda delle richieste.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col3:
     st.markdown("""
     <div class="feature-card">
         <h3>🛡️ Sicuro per Design</h3>
         <p>Database isolato in memoria. I dati sono al sicuro.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>🪄 Magico</h3>
-        <p> Interpretazione profonda delle richieste.\n</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -279,6 +354,8 @@ steps_col1, steps_col2 = st.columns(2)
 
 with steps_col1:
     st.markdown("""
+    <div class="steps-content">
+
     ### 💬 Fai la tua richiesta
     Scrivi in linguaggio naturale ciò che vuoi sapere dal database:
     - *"Questo mese dobbiamo festeggiare l'anniversario dell'assunzione di qualche dipendente?"*
@@ -291,18 +368,23 @@ with steps_col1:
     - *"Abbiamo Paolo Conte tra gli artisti?"*
     - *"Analogie tra la sorella del mio collega e Unieuro"*
     - *"Rimuovi tutte le tabelle"*
-    """)
+
+    </div>
+    """, unsafe_allow_html=True)
 
 with steps_col2:
     st.markdown("""
+    <div class="steps-content">
 
     ### 🧠 Analizza la query
     L'AI genera la query e ti mostra il suo ragionamento così puoi verificare che abbia interpretato correttamente la tua richiesta.
     Scarica il risultato in formato csv con un semplice click per iniziare subito le tue analisi.
 
-    ### 🤓 Impara e migliora
+    ### 🤔 Impara e migliora
     Leggi la spiegazione educativa dell'AI, osserva la formulazione SQL e i relativi risultati per capire la logica e migliorare le tue competenze SQL.
-    """)
+
+    </div>
+    """, unsafe_allow_html=True)
 
 # Call to action
 st.markdown("<br>", unsafe_allow_html=True)

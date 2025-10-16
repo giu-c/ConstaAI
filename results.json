@@ -1,32 +1,5 @@
 [
-    "Ho verificato che la richiesta riguarda brani (Track) di un artista specifico (Pink Floyd) e la durata in minuti inferiore a 4 minuti. Ho quindi unito le tabelle Track, Album e Artist tramite le chiavi esterne AlbumId e ArtistId. La condizione ar.Name = 'Pink Floyd' filtra l'artista, mentre t.Milliseconds < 240000 (4*60*1000) filtra la durata. La colonna Milliseconds è convertita in minuti dividendo per 60000 e arrotondata a due decimali con ROUND. Il risultato restituisce il nome del brano e la sua durata in minuti.",
-    "SELECT t.Name, ROUND(t.Milliseconds/60000.0, 2) AS DurationMinutes FROM Track t JOIN Album a ON t.AlbumId = a.AlbumId JOIN Artist ar ON a.ArtistId = ar.ArtistId WHERE ar.Name = 'Pink Floyd' AND t.Milliseconds < 240000;",
-    {
-        "columns": [
-            "Name",
-            "DurationMinutes"
-        ],
-        "data": [
-            [
-                "Speak To Me/Breathe",
-                3.9
-            ],
-            [
-                "On The Run",
-                3.58
-            ],
-            [
-                "Any Colour You Like",
-                3.43
-            ],
-            [
-                "Brain Damage",
-                3.84
-            ],
-            [
-                "Eclipse",
-                2.09
-            ]
-        ]
-    }
+    "L'utente richiede di rimuovere la tabella 'Customer' dal database. La query SQLite corrispondente è un'istruzione DDL DROP TABLE, che elimina la definizione della tabella e tutti i dati in essa contenuti. Si usa semplicemente DROP TABLE Customer; (eventualmente con IF EXISTS per evitare errori se la tabella non esiste).",
+    "DROP TABLE Customer;",
+    "💥 La query è stata eseguita!"
 ]
