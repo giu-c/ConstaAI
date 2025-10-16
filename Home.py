@@ -136,7 +136,17 @@ st.markdown("""
         margin-bottom: 2rem;
     }
 
-    /* Feature Cards - ALTEZZA FISSA CON TESTO GRANDE */
+    /* Forza altezza uniforme per le colonne */
+    [data-testid="column"] > div {
+        height: 100%;
+    }
+
+    [data-testid="column"] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Feature Cards - ALTEZZA FISSA FORZATA */
     .feature-card {
         background: linear-gradient(135deg, #2a3544 0%, #1e2936 100%);
         padding: 1.5rem;
@@ -146,11 +156,15 @@ st.markdown("""
         transition: transform 0.2s;
         border: 1px solid rgba(102, 126, 234, 0.2);
 
-        /* ALTEZZA FISSA per uniformità */
-        height: 200px;
+        /* ALTEZZA FISSA FORZATA per uniformità */
+        height: 200px !important;
+        min-height: 200px !important;
+        max-height: 200px !important;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
     .feature-card:hover {
@@ -177,7 +191,9 @@ st.markdown("""
     /* Responsive per tablet */
     @media (max-width: 1024px) {
         .feature-card {
-            height: 220px;
+            height: 220px !important;
+            min-height: 220px !important;
+            max-height: 220px !important;
         }
 
         .feature-card h3 {
@@ -198,8 +214,9 @@ st.markdown("""
         }
 
         .feature-card {
-            height: auto;
-            min-height: 180px;
+            height: auto !important;
+            min-height: 180px !important;
+            max-height: none !important;
         }
 
         .feature-card h3 {
@@ -295,54 +312,24 @@ st.markdown('<h2 class="section-title">✨ Caratteristiche Principali</h2>', uns
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>🫂 User Friendly</h3>
-        <p>Pensata per tutti. Semplice e piacevole.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>🫂 User Friendly</h3><p>Pensata per tutti. Semplice e piacevole.</p></div>""", unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>🪄 Magico</h3>
-        <p>Interpretazione profonda delle richieste.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>🪄 Magico</h3><p>Interpretazione profonda delle richieste.</p></div>""", unsafe_allow_html=True)
 
 with col3:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>🛡️ Sicuro per Design</h3>
-        <p>Database isolato in memoria. I dati sono al sicuro.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>🛡️ Sicuro per Design</h3><p>Database isolato in memoria. I dati sono al sicuro.</p></div>""", unsafe_allow_html=True)
 
 col4, col5, col6 = st.columns(3)
 
 with col4:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>👩🏻‍🏫 Spiegazioni Chiare</h3>
-        <p>Impara e migliora la tua conoscenza di SQL.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>👩🏻‍🏫 Spiegazioni Chiare</h3><p>Impara e migliora la tua conoscenza di SQL.</p></div>""", unsafe_allow_html=True)
 
 with col5:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>⚡ Prestazioni Incredibili</h3>
-        <p>Risposte rapide anche per query complesse.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>⚡ Prestazioni Incredibili</h3><p>Risposte rapide anche per query complesse.</p></div>""", unsafe_allow_html=True)
 
 with col6:
-    st.markdown("""
-    <div class="feature-card">
-        <h3>💯 Massima Precisione</h3>
-        <p>Impossibile ottenere query inesatte.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>💯 Massima Precisione</h3><p>Impossibile ottenere query inesatte.</p></div>""", unsafe_allow_html=True)
 
 # Divider
 st.markdown("---")
