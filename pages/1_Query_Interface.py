@@ -24,7 +24,7 @@ st.set_page_config(
 class Config:
     VIDEO_DURATION = 13
     DB_PATH = 'data/db.sqlite'
-    VIDEO_PATH = r'objects\Query.mp4'
+    VIDEO_PATH = 'objects/Query.mp4'
     OUTPUT_JSON = 'output.json'
     RESULTS_JSON = 'results.json'
     SQL_MODIFICATION_COMMANDS = frozenset(["DROP", "REPLACE", "UPDATE", "INSERT", "DELETE"])
@@ -286,10 +286,10 @@ class UIComponents:
         """Renderizza risultati stringa con stili appropriati"""
         if Config.EMOJI_ERROR in query_result:
             st.error(query_result)
-            UIComponents.show_centered_image(r"objects\hasbu.avif")
+            UIComponents.show_centered_image("objects/hasbu.avif")
         elif "Warning" in sql_query or Config.EMOJI_WARNING in query_result:
             st.warning(query_result)
-            UIComponents.show_centered_image(r"objects\meme.jpg")
+            UIComponents.show_centered_image("objects/meme.jpg")
         elif Config.EMOJI_SUCCESS in query_result or Config.EMOJI_EMPTY in query_result:
             st.success(query_result)
         else:
@@ -336,7 +336,7 @@ class UIComponents:
 
         # Video per operazioni pericolose
         if Config.EMOJI_ERROR not in str(query_result) and any(cmd in sql_query for cmd in ["DELETE", "DROP"]):
-            st.video(r"objects\non_farlo.mp4")
+            st.video("objects/non_farlo.mp4")
 
     @staticmethod
     def show_video_intro():
