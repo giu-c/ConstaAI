@@ -147,87 +147,88 @@ st.markdown("""
     }
 
     /* Feature Cards - ALTEZZA FISSA FORZATA */
+.feature-card {
+    background: linear-gradient(135deg, #2a3544 0%, #1e2936 100%);
+    padding: 2rem 1.5rem;  /* Aumentato padding verticale da 1.5rem a 2rem */
+    border-radius: 10px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+
+    /* ALTEZZA AUMENTATA per più spazio */
+    height: 240px !important;  /* Era 200px */
+    min-height: 240px !important;
+    max-height: 240px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;  /* Aumentato da 1rem a 1.2rem */
+    color: #ffffff;
+    font-size: 1.7rem !important;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #b8bdc4;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.3rem !important;
+}
+
+/* Responsive per tablet */
+@media (max-width: 1024px) {
     .feature-card {
-        background: linear-gradient(135deg, #2a3544 0%, #1e2936 100%);
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin: 1rem 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-        border: 1px solid rgba(102, 126, 234, 0.2);
-
-        /* ALTEZZA FISSA FORZATA per uniformità */
-        height: 200px !important;
-        min-height: 200px !important;
-        max-height: 200px !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        overflow: hidden;
-        box-sizing: border-box;
-    }
-
-    .feature-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
-        border-color: rgba(102, 126, 234, 0.4);
+        height: 260px !important;  /* Era 220px */
+        min-height: 260px !important;
+        max-height: 260px !important;
+        padding: 1.8rem 1.5rem;
     }
 
     .feature-card h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: #ffffff;
-        font-size: 1.7rem !important;
-        font-weight: 600;
+        font-size: 1.4rem !important;
     }
 
     .feature-card p {
-        color: #b8bdc4;
-        margin: 0;
-        line-height: 1.6;
+        font-size: 1.05rem !important;
+    }
+}
+
+/* Responsive per mobile - card si impilano */
+@media (max-width: 768px) {
+    [data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+
+    .feature-card {
+        height: auto !important;
+        min-height: 200px !important;  /* Aumentato da 180px */
+        max-height: none !important;
+        padding: 1.5rem;
+    }
+
+    .feature-card h3 {
         font-size: 1.3rem !important;
     }
 
-    /* Responsive per tablet */
-    @media (max-width: 1024px) {
-        .feature-card {
-            height: 220px !important;
-            min-height: 220px !important;
-            max-height: 220px !important;
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem !important;
-        }
-
-        .feature-card p {
-            font-size: 1.05rem !important;
-        }
+    .feature-card p {
+        font-size: 1rem !important;
     }
-
-    /* Responsive per mobile - card si impilano */
-    @media (max-width: 768px) {
-        [data-testid="column"] {
-            width: 100% !important;
-            flex: 1 1 100% !important;
-            min-width: 100% !important;
-        }
-
-        .feature-card {
-            height: auto !important;
-            min-height: 180px !important;
-            max-height: none !important;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem !important;
-        }
-
-        .feature-card p {
-            font-size: 1rem !important;
-        }
-    }
-
+}
     /* Stili per sezione Come Iniziare - Testi più grandi */
     .steps-content h3 {
         font-size: 1.8rem !important;
