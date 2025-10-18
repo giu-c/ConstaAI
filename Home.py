@@ -338,7 +338,7 @@ st.markdown("---")
 # Sezione come iniziare
 st.markdown('<h2 class="section-title">🚀 Come Iniziare</h2>', unsafe_allow_html=True)
 
-steps_col1, steps_col2 = st.columns(2)
+steps_col1, steps_col3, steps_col2 = st.columns([5, 1, 5])
 
 with steps_col1:
     st.markdown("""
@@ -358,6 +358,12 @@ with steps_col1:
     - *"Rimuovi tutte le tabelle"*
 
     </div>
+    """, unsafe_allow_html=True)
+
+with steps_col3:
+    st.markdown("""
+    <div class="steps-content">
+        </div>
     """, unsafe_allow_html=True)
 
 with steps_col2:
