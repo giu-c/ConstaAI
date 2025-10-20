@@ -316,10 +316,10 @@ with col1:
     st.markdown("""<div class="feature-card"><h3>🫂 User Friendly</h3><p>Pensata per tutti. Semplice e piacevole.</p></div>""", unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""<div class="feature-card"><h3>🪄 Magico</h3><p>Interpretazione profonda delle richieste.</p></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>🪄 Magica</h3><p>Interpretazione profonda delle richieste.</p></div>""", unsafe_allow_html=True)
 
 with col3:
-    st.markdown("""<div class="feature-card"><h3>🛡️ Sicuro per Design</h3><p>Database isolato in memoria. I dati sono al sicuro.</p></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="feature-card"><h3>🛡️ Sicura per Design</h3><p>Database isolato in memoria. I dati sono al sicuro.</p></div>""", unsafe_allow_html=True)
 
 col4, col5, col6 = st.columns(3)
 
