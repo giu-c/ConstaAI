@@ -374,7 +374,7 @@ with steps_col2:
     L'AI genera la query e ti mostra il suo ragionamento così puoi verificare che abbia interpretato correttamente la tua richiesta.
     Scarica il risultato in formato csv con un semplice click per iniziare subito le tue analisi.
 
-    ### 🤔 Impara e migliora
+    ### 🤓 Impara e migliora
     Leggi la spiegazione educativa dell'AI, osserva la formulazione SQL e i relativi risultati per capire la logica e migliorare le tue competenze SQL.
 
     </div>
