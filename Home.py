@@ -354,7 +354,6 @@ with steps_col1:
     - *"Meglio Messi o Ronaldo?"*
     - *"Aggiungi un nuovo cliente di nome Mark Pittau e i relativi valori (usa dati sintetici)"*
     - *"Abbiamo Paolo Conte tra gli artisti?"*
-    - *"Analogie tra la sorella del mio collega e Unieuro"*
     - *"Rimuovi tutte le tabelle"*
 
     </div>
