@@ -347,13 +347,12 @@ with steps_col1:
     ### 💬 Fai la tua richiesta
     Scrivi in linguaggio naturale ciò che vuoi sapere dal database:
     - *"Questo mese dobbiamo festeggiare l'anniversario dell'assunzione di qualche dipendente?"*
-    - *"Sushi o sashimi?"*                
     - *"Titoli delle canzoni Rock dalla durata superiore ai 5 minuti presenti in almeno due compilation"*
     - *"Cancella la tabella dipendenti"*
     - *"Dove vivono i nostri clienti? Indicami i 3 paesi più rappresentativi"*
-    - *"Meglio Messi o Ronaldo?"*
     - *"Aggiungi un nuovo cliente di nome Mark Pittau e i relativi valori (usa dati sintetici)"*
     - *"Abbiamo Paolo Conte tra gli artisti?"*
+    - *"Sushi o sashimi?"*                
     - *"Rimuovi tutte le tabelle"*
 
     </div>
