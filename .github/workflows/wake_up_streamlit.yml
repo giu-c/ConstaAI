@@ -40,8 +40,9 @@ jobs:
               console.error('Errore durante il caricamento:', e.message);
               process.exit(1);
             }
-
-# ciao zì!
             await browser.close();
           })();
           "
+
+# ciao zì!
+
