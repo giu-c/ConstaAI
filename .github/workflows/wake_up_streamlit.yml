@@ -1,8 +1,9 @@
 name: Wake Up Streamlit (Playwright)
+
 on:
   schedule:
-    - cron: '0 */6 * * *' # Viene eseguito 4 volte al giorno
-  workflow_dispatch:  
+    - cron: '0 */6 * * *' # Ogni 6 ore
+  workflow_dispatch:      # Permette l'avvio manuale per test
 
 jobs:
   keep-alive:
@@ -28,14 +29,15 @@ jobs:
           (async () => {
             const browser = await chromium.launch({ headless: true });
             const page = await browser.newPage();
-            console.log('Navigazione verso l\'app...');
+            console.log('Navigazione verso l' + ' app...');
             try {
-              // Sostituisci con il tuo URL reale
+              // URL aggiornato: consta.streamlit.app
               await page.goto('https://consta.streamlit.app', { waitUntil: 'networkidle', timeout: 60000 });
               console.log('Pagina caricata correttamente');
-              // Aspettiamo che Streamlit carichi i componenti core
+              
+              // Aspettiamo che il WebSocket di Streamlit si stabilizzi
               await page.waitForTimeout(10000); 
-              console.log('Sessione WebSocket stabilita. App sveglia!');
+              console.log('Sessione stabilita. App sveglia!');
             } catch (e) {
               console.error('Errore durante il caricamento:', e.message);
               process.exit(1);
@@ -43,6 +45,4 @@ jobs:
             await browser.close();
           })();
           "
-# ciao zì!
-# ciao zì!
-
+# ciao zì! (Questo commento YAML fuori dal blocco 'run' è ok)
