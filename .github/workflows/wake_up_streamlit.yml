@@ -45,4 +45,4 @@ jobs:
             await browser.close();
           })();
           "
-# ciao zì! (Questo commento YAML fuori dal blocco 'run' è ok)
+# ciao zì!
