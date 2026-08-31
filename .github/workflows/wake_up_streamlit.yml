@@ -3,7 +3,7 @@ name: Wake Up Streamlit (Playwright)
 on:
   schedule:
     - cron: '0 */6 * * *' # Ogni 6 ore
-  workflow_dispatch:      # Permette l'avvio manuale per test
+  workflow_dispatch:     
 
 jobs:
   keep-alive:
